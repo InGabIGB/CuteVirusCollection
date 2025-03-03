@@ -3,16 +3,13 @@ setlocal
 
 :: Définition des variables
 set "imageUrl=https://raw.githubusercontent.com/pankoza2-pl/HorrorTubbies/main/source/1.0/teletubbies-black-and-white-horror-show-fb.jpg"
-set "imagePath=%TEMP%\wallpaper.jpg"
+set "imagePath=%USERPROFILE%\wallpaper.jpg"
 
-:: Téléchargement de l'image
+:: Téléchargement de l'image avec PowerShell
 powershell -Command "(New-Object System.Net.WebClient).DownloadFile('%imageUrl%', '%imagePath%')"
 
-:: Modification du fond d'écran via le registre
-reg add "HKEY_CURRENT_USER\Control Panel\Desktop" /v Wallpaper /t REG_SZ /d "%imagePath%" /f
-
-:: Mise à jour du fond d'écran
-RUNDLL32.EXE user32.dll,UpdatePerUserSystemParameters
+:: Appliquer le fond d'écran sans admin
+powershell -Command "& {Add-Type -TypeDefinition 'using System; using System.Runtime.InteropServices; public class Wallpaper { [DllImport(\"user32.dll\", CharSet = CharSet.Auto)] public static extern int SystemParametersInfo(int uAction, int uParam, string lpvParam, int fuWinIni); }'; [Wallpaper]::SystemParametersInfo(20, 0, '%imagePath%', 3)}"
 
 echo Le fond d'écran a été changé avec succès !
 exit
