@@ -1,7 +1,7 @@
 import socket
 
 # Adresse et port du serveur
-HOST = "127.0.0.1"
+HOST = "172.16.8.148"
 PORT = 65432
 
 # Création du socket serveur
