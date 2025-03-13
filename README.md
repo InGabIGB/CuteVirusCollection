@@ -1,6 +1,9 @@
 # CuteVirusCollection
 #### A Collection of Cute But Deadly Viruses
 
+JE NE SUIS PAS RESPONSABLE ET JE N'AI RIEN A VOIR SI IL Y A UN PROBLEME
+A VOS RISQUE ET PÉRILE
+
 **They will instantly snatch control from you. Then will sicken your high-end PC by overflowing the RAM & overwhelming the processor. And you will see your computer groaning till it crashes. Believe me, viruses were never so lovely before.**
 
 Computer is a very complex machine. You just have to break one support to crash the whole structure. It can be done in many ways- overloading the processor, overflowing the RAM, flooding the hard-disk, occupying input/output system or any other resource, and erasing essential software (like- operating system). Follow the [Disaster Level](#disaster-level) for getting a categorical view of the project.
